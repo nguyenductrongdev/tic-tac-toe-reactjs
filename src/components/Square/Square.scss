@@ -1,0 +1,18 @@
+.Square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 15vw;
+  height: 15vw;
+  margin: 0.3vw;
+  outline: solid 1px black;
+
+  font-size: 10vw;
+  font-weight: bold;
+
+  background: #eee;
+
+  cursor: pointer;
+  user-select: none;
+}

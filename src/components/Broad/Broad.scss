@@ -1,0 +1,20 @@
+.Broad {
+  margin: auto;
+  padding: 2vw;
+  width: 50vw;
+
+  background: url("https://cdn.pixabay.com/photo/2020/07/06/09/37/green-5376289_960_720.jpg");
+  background-size: contain;
+
+  &__game {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tools {
+    padding: 1vw 0;
+    border-radius: 2vw;
+
+    background: rgba($color: #eee, $alpha: 0.5);
+  }
+}
