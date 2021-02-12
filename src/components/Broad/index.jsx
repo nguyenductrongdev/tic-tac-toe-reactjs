@@ -3,48 +3,6 @@ import { useState, useEffect } from "react";
 import Square from "../Square";
 import './Broad.scss';
 
-let broadGetterMap = {
-    top: function (width, height, currIndex) {
-        let top = currIndex - width;
-        return top >= 0 ? top : -1;
-    },
-
-    bottom: function (width, height, currIndex) {
-        let bottom = currIndex + width;
-        return bottom < width * height ? bottom : -1;
-    },
-
-    left: function (width, height, currIndex) {
-        let left = currIndex - 1;
-        return Math.ceil(left / width) === Math.ceil(currIndex / width) ? left : -1;
-    },
-
-    right: function (width, height, currIndex) {
-        let right = currIndex + 1;
-        return Math.ceil(right / width) === Math.ceil(currIndex / width) ? right : -1;
-    },
-
-    topLeft: function (width, height, currIndex) {
-        let top = broadGetterMap['top'](width, height, currIndex);
-        return broadGetterMap['left'](width, height, top)
-    },
-
-    topRight: function (width, height, currIndex) {
-        let top = broadGetterMap['top'](width, height, currIndex);
-        return broadGetterMap['right'](width, height, top)
-    },
-
-    bottomRight: function (width, height, currIndex) {
-        let bottom = broadGetterMap['bottom'](width, height, currIndex);
-        return broadGetterMap['right'](width, height, bottom)
-    },
-
-    bottomLeft: function (width, height, currIndex) {
-        let bottom = broadGetterMap['bottom'](width, height, currIndex);
-        return broadGetterMap['left'](width, height, bottom)
-    },
-}
-
 function isEndTurn(broadSquares) {
     console.log('>>', broadSquares);
     const lines = [
